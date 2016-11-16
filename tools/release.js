@@ -7,15 +7,19 @@
  * LICENSE.txt file in the root directory of this source tree.
  */
 
-import del from 'del';
-import fs from './lib/fs';
+import zipFolder from 'zip-folder';
 
 /**
  * Cleans up the output (build) directory.
  */
-async function clean() {
-  await del(['.tmp', 'build/*', '!build/.git', 'release.zip'], { dot: true });
-  await fs.makeDir('build/public');
+async function release() {
+  await zipFolder('build', 'release.zip', function(err) {
+    if(err) {
+      console.log('oh no!', err);
+    } else {
+      console.log('release done!');
+    }
+  });
 }
 
-export default clean;
+export default release;
