@@ -10,4 +10,21 @@
   top: 45%;
   left: 50%;
   transform: translate(-50%,-50%);
+
+}
+
+.social {
+
+  margin-left: -5px;
+
+  li {
+    list-style:none;
+    float:left;
+    margin-right: 10px;
+
+    a {
+      text-decoration:none;
+      color:#000000;
+    }
+  }
 }

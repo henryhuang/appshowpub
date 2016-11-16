@@ -7,6 +7,17 @@ function Home2({ title }) {
     <div className={s.root}>
       <div className={s.container}>
         <h1>{title}</h1>
+        <ul className={s.social}>
+          <li>
+            <a href="http://weibo.com/626242034" target="_blank">微博</a>
+          </li>
+          <li>
+            <a href="https://github.com/henryhuang" target="_blank">Github</a>
+          </li>
+          <li>
+            <a href="https://twitter.com/henryhuang1886" target="_blank">Twitter</a>
+          </li>
+        </ul>
       </div>
     </div>
   );
