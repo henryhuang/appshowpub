@@ -1,19 +1,15 @@
 sudo: false
 language: node_js
 node_js:
-- '5'
+- '6'
 script:
 - npm run build -- --release
 - npm run release
+- cat $TOKEN >> token
+- npm run upload
 branches:
   only:
   - dev
-deploy:
-  provider: releases
-  skip_cleanup: true
-  api_key:
-    secure: UNcOu8FeyOetCUzxyX2DHVZBMdkz7QHtk/zCl6YCTbNIWAiflAB5Ztiy3kG8LFKkfl54v9bLciX/M4a4/juA2nM/WBV59b/CeDy4lUmHLwDaC+bB5iR7e8+k7F+FzQexfyi0c6mxU634LK3uDN4AxE3qbuXg+wAYlDDslX8KLUFDn1kcJWoT6WYZGt9OflKCsbjZ6BG2JXFitEj/mKp6MAsKi+e9b/uVZMphInjDHdR1VjXKXFN2/RjCKwoDaalPUkly3Tu+paAlmKAwOa7/4sJMQljI8OdXGTBiagUpRW8X5pY0H7kIELhY4IC19a1r1hiOrSwBifkU+3/sNsuIQNt1QWW2l/L7Sw47azweB5tTrSC/NNPQayrS01MwpWv8s/KIz0LMjXutBSczXy76/vDKU3IYjhm941NCLzyVZvBbzeK4k0jWNpNQZ0HkTB1gUIpGhtdxu/ebuhIT1a3EaNUihkI7rum5cV+bQoLoxdir2Y/YoJpiSsASBNVSV3eQpkYEJpPOuhSGdOflDTv1Vep+HG/2T3lpJn+WKckuSRWah1lcuJ1eza8R5wf4qzeSnacIOaGkDMRSFUEkveJ1ACJbbIZsQ2SFiOlwxg6p/YK6I5NBUpPvTrbFoxWOvO+qo+F+Pjw+zK+857wPpQsrdas/UbneqPnuD8PESZwke2M=
-  file: release.zip
-  on:
-    tags: true
-    branch: dev
+env:
+  global:
+    secure: ZkfJh9X99oxfniXxhGiwGKRJGYW5F9elL06bxBNe6Kh8/4nEYGt8rAnlXwf8h9/uXzTZemWo8FLZZ3BwW8MLbWclSBQ2j9nU3g+JMJY+nGHNb6OoA1JzjLgI/QMUdVl2o2+0EbcePSoqHqXMHH8wp2GmVaAHyMZ3716eS/834IaoFVEa+YH/COJbRYxblW20k987V28yJH909ByImwzOzeNV7lZEkTYltjuYfwHWzhbdoGUJ6hbu0xqo6+u4jyupJTRGLXPg9eeCpQqbFjdkFGVqqq0QzOd1bt0t8Ze627qr+83lcGIgBqpNZbUoR7nd8GCH/rIMhD2PXrsjDV+/R0aubkevVXRxM+WYrIPDHJw62a5RAPKhVg0JNUEiYj9Gttf1JjlnADG5AVTTX9zio+BPFnYNtsZ9b5bSHtstuE5nse+TGuWFite/C9vE7Cwo0USytRUwXOM9Pk4fo8Om/1HGYfWoI+9QmQRqMswxkq8dRD9bIF/SebutAMSXJbqW6b+3XdLnIuSJMYSq/tFrkIrqppX+VB0y+y++zeDjvSHND/5bAVhG13CkqsD1RyKoYQTw2xWag4nUTM1E0NlLNaaOCMyE8PtWJalhLrtQaqnnkj7sXhcxBYdmen38NBSbKDcoh/wADYpoYb38NYuUi8mIsW1Ma64xx7hh1b3AqWc=
