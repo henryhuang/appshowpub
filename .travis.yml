@@ -5,7 +5,7 @@ node_js:
 script:
 - npm run build -- --release
 - npm run release
-- cat $TOKEN >> token
+- echo $TOKEN >> token
 - npm run upload
 branches:
   only:
