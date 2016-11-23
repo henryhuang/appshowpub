@@ -113,6 +113,7 @@
     "build": "babel-node tools/run build",
     "deploy": "babel-node tools/run deploy",
     "start": "babel-node tools/run start",
-    "release": "babel-node tools/run release"
+    "release": "babel-node tools/run release",
+    "upload": "babel-node tools/run upload"
   }
 }
