@@ -41,7 +41,7 @@ async function upload() {
     repo: 'appshowpub',
     tag_name: tagName,
     target_commitish: 'dev',
-    name: tarName
+    name: tagName
   }, function (err, res) {
     if (err) {
       throw e;
