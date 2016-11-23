@@ -12,7 +12,7 @@ const GitHubApi = require('github');
 const ghReleaseAssets = require('gh-release-assets')
 
 let token = fs.readFileSync('token');
-token = token.trim();
+token = token.toString().trim();
 
 const github = new GitHubApi({
   protocol: "https",
