@@ -85,7 +85,7 @@ server.get('*', async (req, res, next) => {
     const data = { title: '', description: '', css: '', body: '', entry: assets.main.js };
 
     if (process.env.NODE_ENV === 'production') {
-      data.trackingId = analytics.google.trackingId;
+      // data.trackingId = analytics.google.trackingId;
     }
 
     const css = [];
